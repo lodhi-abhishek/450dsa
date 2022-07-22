@@ -1,0 +1,15 @@
+*.d
+*.h
+
+
+*.exe
+*.out
+*.app
+
+*.ods
+*.pdf
+*.xlsx
+
+*.pdf
+
+.vscode
