@@ -9,25 +9,29 @@ https://practice.geeksforgeeks.org/problems/maximum-rectangular-area-in-a-histog
 using namespace std;
 typedef long long ll;
 
-
-namespace BruteForce {
-    int getMaxArea(vector<int>& arr) {
+namespace BruteForce
+{
+    int getMaxArea(vector<int> &arr)
+    {
         int n = arr.size();
         int ans = 0;
-        for(int i = 0; i < n; i++) {
-            int left = i; // Left pointer
+        for (int i = 0; i < n; i++)
+        {
+            int left = i;  // Left pointer
             int right = i; // Right pointer
 
-            while(arr[left] >= arr[i]) 
+            while (arr[left] >= arr[i])
                 left--;
 
-            while(arr[right] >= arr[i]) 
+            while (arr[right] >= arr[i])
                 right++;
 
-            if(left < 0) left = 0; // If left move out of range
-            if(right > n - 1) right = n -1; // If right move out of range
+            if (left < 0)
+                left = 0; // If left move out of range
+            if (right > n - 1)
+                right = n - 1; // If right move out of range
 
-            ans = max(ans,(int)((right - left - 1) * arr[i]));
+            ans = max(ans, (int)((right - left - 1) * arr[i]));
         }
         return ans;
     }
@@ -35,54 +39,49 @@ namespace BruteForce {
 
 /*
     Find left most smallest and right most smallest.
-    For each element width = right - left + 1 and area = width * arr[i].
+    For each element width = right - left + 1 and area = width * heights[i].
     Find the maximum area form the all area calculated for each index.
 */
-namespace Optimze {
-    int getMaxArea(vector<int>& arr) {
-        int n = arr.size(); 
+namespace MyAnswer
+{
+    int getMaxArea(vector<int>& heights) {
+        int n = heights.size();
         stack<int> s;
-        int left_smallest[n], right_smallest[n];        
 
-        // For left_smallest 
+        int leftsmall[n], rightsmall[n];
         for(int i = 0 ; i < n; i++) {
-            while(!s.empty() && arr[s.top()] >= arr[i]) 
+            while(!s.empty() && heights[s.top()] >= heights[i])
                 s.pop();
 
-            if(s.empty()) left_smallest[i] = 0; 
-            else {
-                left_smallest[i] = s.top() + 1;
-            }
-            s.push(i);
+            if(s.empty()) leftsmall[i] = 0;
+            else leftsmall[i] = s.top() + 1;
+            s.push(i); 
         }
 
         while(!s.empty()) s.pop();
 
-        // For Right_smallest
-        for(int i = n - 1; i >=0; --i) {
-            while(!s.empty() && arr[s.top()] >= arr[i])
+        for(int i = n-1; i>=0; i--) {
+            while(!s.empty() && heights[s.top()] >= heights[i]) 
                 s.pop();
-
-            if(s.empty()) right_smallest[i] = n-1;
-            else {
-                right_smallest[i] = s.top() - 1;
-            }
+            if(s.empty()) rightsmall[i] = n-1;
+            else rightsmall[i] = s.top() - 1;
             s.push(i);
         }
-        
-        int area = 0;
 
-        for(int i = 0 ; i < n; i++) {
-            area = max(area, (right_smallest[i] - left_smallest[i] + 1) * arr[i]);
-        } 
-        return area;
+        int max_area = 0;
+        for(int i = 0; i < n ; i++) {
+            max_area = max(max_area,heights[i] * (rightsmall[i] - leftsmall[i] + 1));
+        }
+
+        return max_area;
     }
 }
 
-int main(void) {
 
-    vector<int> arr= {6,2,5,4,5,1,6};    
-
-    cout << Optimze::getMaxArea(arr) << endl;
+int main(void)
+{
+    vector<int> arr = {6, 2, 5, 4, 5, 1, 6};
+    cout << BruteForce::getMaxArea(arr) << endl;
+    cout << MyAnswer::getMaxArea(arr) << endl;
     return 0;
 }
