@@ -1,14 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
 
-// O(nlogn) +
+// O(nlogn) + O(n*n) 
 
-int median(vector<vector<int>>&M,int r,int c) {
-
+int median_BruteForce(vector<vector<int>>&M,int r,int c) {
     vector<int> arr;
     for(int i = 0 ; i < r; i++)
         for(int j = 0; j < c; j++)
@@ -21,13 +18,11 @@ int median(vector<vector<int>>&M,int r,int c) {
 }
 
 int main(void) {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
 
     vector<vector<int>> M = {{1,3,5},{2,6,9},{3,6,9}};
     int r = M.size();
     int c = M[0].size();
 
-    cout << median(M,r,c) << endl;
+    cout << median_BruteForce(M,r,c) << endl;
     return 0;
 }
