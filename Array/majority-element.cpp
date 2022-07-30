@@ -11,7 +11,7 @@ Boyer–Moore majority vote algorithm used
 Step 1 – Find a candidate with the majority –
 
     1. Initialize a variable say i ,votes = 0, candidate = -1 
-    2.Traverse through the array using for loop
+    2. Traverse through the array using for loop
     3. If votes = 0, choose the candidate = arr[i] , make votes=1.
         3.1 else if the current element is the same as the candidate increment votes
         3.2 else decrement votes.
@@ -24,8 +24,7 @@ Step 2 – Check if the candidate has more than N/2 votes –
 */
 
 // ⌊n / 2⌋
-vector<int> MajorityElementn2(vector<int> &nums)
-{
+vector<int> MajorityElementn2(vector<int> &nums) {
 
     int n = nums.size(), count = 0, element = -1, votes = 0;
     vector<int> result;
