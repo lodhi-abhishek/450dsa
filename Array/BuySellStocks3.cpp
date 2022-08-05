@@ -10,11 +10,6 @@ transactions  profit ->
 	2  0
 	   ⭡
 	(As on the day-1 you only purchase)
-
-	.-- i 
-	|
-	j	
-
 */
 
 int maxProfit(vector<int> &prices) {
