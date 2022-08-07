@@ -13,3 +13,4 @@
 *.pdf
 
 .vscode
+build
