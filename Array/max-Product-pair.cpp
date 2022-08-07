@@ -42,7 +42,39 @@ pair<int,int> findpair(int *arr,int n) {
 }
 
 // This is to be done in O(n)
-// 
+// Find the max and second max of both postive and negative numbers
+
+pair<int,int> findpairs(int arr[],int n) {
+
+	int postive_a = INT_MIN , postive_b = INT_MIN;
+	int negative_a = INT_MIN , negative_b = INT_MIN;
+
+	for(int i = 0; i < n; i++) {
+
+		if(arr[i] > postive_a) {
+			postive_b = postive_a;
+			postive_a = arr[i];
+		}
+		else if(arr[i] > postive_b) {
+			postive_b = arr[i];
+		}
+
+		if(arr[i] < 0 && abs(arr[i]) > abs(negative_a)) {
+			negative_b = negative_a;
+			negative_a = arr[i];
+		}
+
+		else if(arr[i] < 0 && abs(arr[i]) > abs(negative_b)) {
+			negative_b = arr[i];
+		}
+	}
+
+	if(negative_a * negative_b > postive_a * postive_b)
+		return {negative_a,negative_b};
+	else
+		return {postive_a,postive_a};
+}
+
 int main(void) {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
@@ -50,7 +82,7 @@ int main(void) {
 	int arr[] = {-10,-3,5,4,-2};
 	int n = sizeof(arr)/sizeof(arr[0]);
 
-	pair<int,int> result = findpair(arr,n);
+	pair<int,int> result = findpairs(arr,n);
 	cout << result.first << " " << result.	second << endl;
 	return 0;
 }
