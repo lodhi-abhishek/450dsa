@@ -1,23 +1,41 @@
 #include <bits/stdc++.h>
-#define endl "\n"
 using namespace std;
+
 /*
+allowed maximum 2 transaction
 
-transactions  profit ->	
-⭣	   2  4  8  6  7 [Stock selling-prices of the stock on ith day]
-	0  0  0  0  0  0 [With zero transactions profit will be zero]
-	1  0
-	2  0
-	   ⭡
-	(As on the day-1 you only purchase)
+prices [2,3,4,2,1,2,3,2,4]
+	  max 		  max
+4|	  /\     max  /
+3|	 /  \	 /\  /
+2|	/	 \	/  \/
+1|	min	  \/   min
+ |__________________
+
+ Buy the stock then sell. U can't buy before you sell
+
+ Logic would be buy at minima and sell at maxima i.e 2 - 4 1 - 3 2 - 4
+ but we can only have 2 transaction so Which paris to choocie is important.
+
+    i-1 the day Action on ith day
+
+ 	Buy 		Sell 
+ 				Skip
+
+ 	No-State	Buy
+ 				Skip
+
+ 	Sell 		Bought
+ 				Skip
+
+	case 
+	buy - sell
+
+	(2 - 4) + (1 - 3) = 4
+	(2 - 4) + (2 - 4) = 4
+	(2 - 4) + (1 - 4) = 5 <- Max profit
 */
-
-int maxProfit(vector<int> &prices) {
-
-}
-
 int main(void) {
-	vector<int> prices = {3,3,5,0,0,3,1,4};
-	cout << maxProfit(prices) << endl;
-	return 0; 
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 }

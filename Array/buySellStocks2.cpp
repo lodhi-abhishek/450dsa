@@ -21,8 +21,9 @@ using namespace std;
 	Total Profit = Σ Sub Profit
 	
 	Unlike in BuySellStocks1 where we had to find max profit selling 1 stock
-	here we can buy as many stocks but after selling previous one
+	here we can buy [ as many stocks ] but after selling previous one
 */
+
 
 int maxProfit(vector<int> prices) {
 	int n = prices.size() , ans = 0;
