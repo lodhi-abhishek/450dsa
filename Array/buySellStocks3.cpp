@@ -12,30 +12,21 @@ prices [2,3,4,2,1,2,3,2,4]
 1|	min	  \/   min
  |__________________
 
- Buy the stock then sell. U can't buy before you sell
+ DP Recurvise Formula
 
- Logic would be buy at minima and sell at maxima i.e 2 - 4 1 - 3 2 - 4
- but we can only have 2 transaction so Which paris to choocie is important.
+ for kth transcation on the ith day.
 
-    i-1 the day Action on ith day
-
- 	Buy 		Sell 
- 				Skip
-
- 	No-State	Buy
- 				Skip
-
- 	Sell 		Bought
- 				Skip
-
-	case 
-	buy - sell
-
-	(2 - 4) + (1 - 3) = 4
-	(2 - 4) + (2 - 4) = 4
-	(2 - 4) + (1 - 4) = 5 <- Max profit
+ dp[k, i] = max(dp[k, i-1], prices[i] - prices[j] + dp[k-1, j-1]), j=[0..i-1]
+				  \							\
+				  \  						\
+	if you don't sell on that days		if buy on i day then prices[i] - prices[j] profit
+	porfit for that day  remain 		j -> day stock purchased + profit from the previous
+	same as pervious days.				transcation.
+	
 */
 int main(void) {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
+
+	vector<int> prices = {};
 }
