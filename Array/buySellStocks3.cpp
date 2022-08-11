@@ -3,6 +3,7 @@ using namespace std;
 
 /*
 https://youtu.be/2FROyvnnrrM?t=748 
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/discuss/135704/Detail-explanation-of-DP-solution
 
 Watch this video for more explainations
 
@@ -23,7 +24,7 @@ prices [2,3,4,2,1,2,3,2,4]
  dp[k, i] = max(dp[k, i-1], prices[i] - prices[j] + dp[k-1, j-1]), j=[0..i-1]
 				  |							|
 				  |  						|
-	if you don't sell on that days	if buy on i day then prices[i] - prices[j] profit
+	if you don't sell on that days	if sell on i day then prices[i] - prices[j] profit
 	porfit for that day  remain 	j -> day stock purchased + profit from the 
 	same as pervious days.			previous transcation.
 
@@ -46,12 +47,12 @@ int maxProfit(vector<int> prices) {
 
 	for(int k = 1;k<=2;k++) {
 		for(int i = 0; i<(int)prices.size();i++) {
-			int min_ = prices[0];
+			int min_difference = prices[0];
 
 			for(int j = 1; j < i; j++) {
-				min_ = min(min_,prices[j] - dp[k-1][j-1]);
+				min_difference = min(min_difference,prices[j] - dp[k-1][j-1]);
 			}
-			dp[k][i] = max(dp[k][i-1],prices[i]-min_);
+			dp[k][i] = max(dp[k][i-1],prices[i] - min_difference);
 		}
 	}
 	return dp[2][(int)prices.size()-1];
@@ -71,7 +72,7 @@ int maxProfitOptimize(vector<int> prices) {
     	for (int i = 1; i <(int)prices.size(); i++) {
 
     		min_value = min(min_value, prices[i] - dp[k-1][i-1]);
-    		
+
     		dp[k][i] = max(dp[k][i-1], prices[i] - min_value);
     	}
     }
