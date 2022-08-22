@@ -11,7 +11,7 @@
 
 ## Overview 👀
 
-- **Topice wise quesiton is does**
+- **Topice wise quesiton are done**
 
 ## What is 450-DSA Cracker 🤔
 
