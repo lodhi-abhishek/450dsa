@@ -1,66 +1,39 @@
 #include <bits/stdc++.h>
+#include "Node.h"
 using namespace std;
 
-class Node {
-    public:
-        int data;
-        Node * next;
-};
+/*
+Class is declared in Node.h file
+and functions like Print and append are also in it.
+*/
 
-void append(Node * &head, int input) {
-    Node * new_node = new Node();
-    new_node -> data = input;
-    new_node -> next = NULL;
 
-    if(head == NULL) {
-        head = new_node;
-        return;
-    }
+Node * reverse(Node * head, int k) {
 
-    Node * temp = head;
-    while(temp ->next != NULL) {
-        temp = temp->next;
-    }
-
-    temp->next = new_node;
-}
-
-void PrintAllNode(Node * head) {
-    Node * temp = head;
-    while(temp != NULL) {
-        cout << temp->data << " ";
-        temp  = temp->next;
-    }
-    cout << "\n";
-}
-
-Node* reverse(Node *head,int k) {
-
-    Node * prev = NULL;
-    Node * curr = head;
-    Node * next = NULL;
-
-    int count = 0;
     if(!head)
         return NULL;
+    Node * prev_node = NULL;
+    Node * curr_node = head;
+    Node * next_node = NULL;
 
-    while(curr != NULL && count < k) {
-        next = curr->next;
-        curr->next = prev;
+    int count = 0;
+    while(curr_node != NULL && count < k) {
+        next_node = curr_node->next;
+        curr_node->next = prev_node;
 
-        prev = curr;
-        curr = next;
+        prev_node = curr_node;
+        curr_node = next_node; 
         ++count;
     }
 
-    if(next != NULL)
-        head->next = reverse(head,k);
+    if(next_node != NULL)
+        head->next = reverse(next_node,k);
 
-    return prev;
+    return prev_node;
 }
 
-int main(void) {
-    Node * head = NULL;
+int main() {
+    Node *head = NULL;
 
     append(head,1);
     append(head,2);
@@ -71,8 +44,7 @@ int main(void) {
     append(head,7);
     append(head,8);
     append(head,9);
-	
-	Node * temp = reverse(head,3);
-    PrintAllNode(temp);
+
+    Print(reverse(head,3));
     return 0;
 }
