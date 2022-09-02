@@ -1,6 +1,22 @@
 #include "Node.h"
 using namespace std;
 
+Node * reverse(Node * head) {
+	
+	Node * prev = NULL, *curr = head, *next_n = head->next;
+
+	while(curr != NULL) {
+		curr->next = prev;
+
+		prev = curr;
+		curr = next_n;
+
+		if(next_n) 
+			next_n = next_n->next;
+	}
+	return prev;
+}
+
 Node * AddLL(Node *first, Node *second) {
 
 	Node * dummy = new Node(0);
