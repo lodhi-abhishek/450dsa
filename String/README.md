@@ -7,3 +7,5 @@
 - [x] [Longest Palindrome String](https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string/0)
 - [x] [Find longest Subsequence in string](https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence/0)
 - [x] [Print all Subsequence of a string](https://www.geeksforgeeks.org/print-subsequences-string/)
+- [x] [Print Permutation of the String](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
+- [x] [Split the Binary String two substring with equal 0 and 1](https://practice.geeksforgeeks.org/problems/split-the-binary-string-into-substrings-with-equal-number-of-0s-and-1s/1)
