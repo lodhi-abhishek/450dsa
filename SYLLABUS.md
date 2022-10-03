@@ -8,23 +8,23 @@
 
 ## Lectures
 
-- [ ] [Complete Git & GitHub Course](https://youtu.be/apGV9Kg7ics)
+- [x] [Complete Git & GitHub Course](https://youtu.be/apGV9Kg7ics)
 
-- [ ] [Introduction to Programming](https://youtu.be/wn49bJOYAZM)
+- [x] [Introduction to Programming](https://youtu.be/wn49bJOYAZM)
   
-  - [ ] [Types of languages](https://youtu.be/wn49bJOYAZM?t=171)
-  - [ ] [Memory management](https://youtu.be/wn49bJOYAZM?t=1488)
+  - [x] [Types of languages](https://youtu.be/wn49bJOYAZM?t=171)
+  - [x] [Memory management](https://youtu.be/wn49bJOYAZM?t=1488)
 
-- [ ] [Flow of the program](https://youtu.be/lhELGQAV4gg)
+- [x] [Flow of the program](https://youtu.be/lhELGQAV4gg)
   
-  - [ ] [Flowcharts](https://youtu.be/lhELGQAV4gg)
-  - [ ] [Pseudocode](https://youtu.be/lhELGQAV4gg?t=715)
+  - [x] [Flowcharts](https://youtu.be/lhELGQAV4gg)
+  - [x] [Pseudocode](https://youtu.be/lhELGQAV4gg?t=715)
 
-- [ ] [Introduction to Java](https://youtu.be/4EP8YzcN0hQ)
+- [x] [Introduction to Java](https://youtu.be/4EP8YzcN0hQ)
   
-  - [ ] [Introduction](https://youtu.be/4EP8YzcN0hQ)
-  - [ ] [How it works](https://youtu.be/4EP8YzcN0hQ?t=93)
-  - [ ] [Setup Installation](https://youtu.be/4EP8YzcN0hQ?t=1486)
+  - [x] [Introduction](https://youtu.be/4EP8YzcN0hQ)
+  - [x] [How it works](https://youtu.be/4EP8YzcN0hQ?t=93)
+  - [x] [Setup Installation](https://youtu.be/4EP8YzcN0hQ?t=1486)
 
 - [ ] [First Java Program](https://youtu.be/TAtrPoaJ7gc)  
   
