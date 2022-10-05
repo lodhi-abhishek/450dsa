@@ -8,6 +8,5 @@ int countsquare(int n) {
             if( i * i < n )
                 ++count;
         }
-        
-        return count;
+    return count;
 }
