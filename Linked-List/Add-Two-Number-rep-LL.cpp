@@ -18,7 +18,6 @@ Node * reverse(Node * head) {
 }
 
 Node * AddLL(Node *first, Node *second) {
-
 	Node * dummy = new Node(0);
 	Node * temp = dummy;
 	int carry = 0;
