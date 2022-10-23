@@ -17,7 +17,8 @@ vector<int> rearrange(int arr[],int n) {
         result[i] = positive[left];
         ++i;
         ++left;
-
+        // result[i++] = positive[left++];
+        // result[i++] = negative[right++];
         result[i] = negative[right];
         ++i;
         ++right;
