@@ -38,9 +38,9 @@ namespace BruteForce
 }
 
 /*
-    Find left most smallest and right most smallest.
-    For each element width = right - left + 1 and area = width * heights[i].
-    Find the maximum area form the all area calculated for each index.
+ * Find left most smallest and right most smallest.
+ * For each element width = right - left + 1 and area = width * heights[i].
+ * Find the maximum area form the all area calculated for each index.
 */
 namespace MyAnswer
 {
